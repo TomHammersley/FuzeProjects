@@ -1,0 +1,7 @@
+LOOP
+	INK = RND(30)
+	PAPER = RND(30)
+	fontSize (RND(20) + 1)
+	PRINT "star wars";
+REPEAT
+END
