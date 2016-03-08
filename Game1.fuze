@@ -1,0 +1,53 @@
+x = 4
+y = 4
+dx = 0
+dy = 0
+
+LOOP
+
+	gemX = RND(6) + 1
+	gemY = RND(6) + 1
+	
+	LOOP
+
+		senseCLS
+		senseColour = Red
+		senseRect (0, 0, 7, 7, 0)
+	
+		senseColour = Green
+		sensePlot(x, y)
+		
+		senseColour = Magenta
+		sensePlot(gemX, gemY)
+
+		IF senseGyroX < 3 THEN dy = 1
+		IF senseGyroX > 3 THEN dy = -1
+		
+		IF senseGyroY < 3 THEN dx = 1
+		IF senseGyroY > 3 THEN dx = -1
+	
+		x = x + dx
+		y = y + dy
+
+		IF x < 1 THEN x = 1
+		IF x > 6 THEN x = 6
+		
+		IF y < 1 THEN y = 1
+		IF y > 6 THEN y = 6
+	
+		WAIT (0.05)
+		
+		IF x = gemX AND y = gemY THEN BREAK
+	
+	REPEAT
+	
+	FOR count = 1 TO 20 CYCLE
+		WAIT (0.1)
+		senseCLS
+		
+		senseColour = RND(16)
+		senseRect (0, 0, 7, 7, 1)
+	REPEAT
+
+REPEAT
+

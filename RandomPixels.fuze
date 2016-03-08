@@ -1,0 +1,12 @@
+senseCLS
+
+LOOP
+
+	x = RND(8)
+	y = RND(8)
+	
+	senseColour = RND(16)
+	sensePlot(x, y)
+	
+	WAIT (0.01)
+REPEAT

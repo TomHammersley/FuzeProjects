@@ -1,0 +1,15 @@
+LOOP
+
+	senseCLS
+	senseColour = Raspberry
+	senseRect (0, 0, 7, 7, 1)
+
+	x = RND(4)
+	y = RND(4)
+	senseColour = Green
+	senseRect (x, y, 4, 4, 0)
+
+	WAIT (0.2)
+REPEAT
+
+END

@@ -1,0 +1,19 @@
+x = 3
+y = 3
+
+LOOP
+	senseCLS
+	senseColour = Raspberry
+	senseRect (0, 0, 7, 7, 0)
+	senseColour = LightYellow
+	senseRect (x, y, 1, 1, 1)
+	IF senseGyroY < 3 THEN x = x + 1
+	IF senseGyroY > 3 THEN x = x - 1
+	IF senseGyroX < 3 THEN y = y + 1
+	IF senseGyroX > 3 THEN y = y - 1
+	IF x < 1 THEN x = 1
+	IF y < 1 THEN y = 1
+	IF x > 5 THEN x = 5
+	IF y > 5 THEN y = 5
+	WAIT (0.01)
+REPEAT
